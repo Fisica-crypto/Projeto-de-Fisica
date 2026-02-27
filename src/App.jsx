@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Alcance from "./pages/Alcance";
 import Altura from "./pages/Altura";
@@ -14,6 +15,8 @@ export default function App() {
         <Route path="/Altura" element={<Altura />} />
         <Route path="/Alcance" element={<Alcance />} />
       </Routes>
+
+      <Footer/>
     </BrowserRouter>
   );
 }

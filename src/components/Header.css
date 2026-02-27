@@ -1,0 +1,17 @@
+.header-container{
+    background: #3b5454;
+    background: linear-gradient(0deg, (0, 0, 0, 1) 0%, rgba(120, 113, 113, 1) 100%);    
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed ;
+    height: 200px;
+    width: 105vw;
+    color: #000
+}
+.header-logo{
+    height: 120px;
+    width: 120px;
+}
+.navbar-links{
+    color: #fff;
+}
