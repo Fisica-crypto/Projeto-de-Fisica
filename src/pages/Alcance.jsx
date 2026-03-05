@@ -21,14 +21,16 @@ export default function Alcance() {
     return (
         <>
             <div className="Conteudo">
-                <h1>Primeiro teste do simulador, simboraaaa!!</h1>
+                <h1>Primeiro teste do simulador</h1>
+
+                    <label htmlFor="">Velocidade m/s</label><br />
 
                 <select onChange={(e) => setVelocidade(e.target.value)}>
                     <option value='20'>20m/s</option>
                     <option value="30">30m/s</option>
                     <option value="40m">40ms</option>
-                </select>
-
+                </select><br />
+                    <label htmlFor="">Selecione o angulo</label><br />
                 <input
                 type="number"
                 placeholder="Digite o ângulo de lançamentoo."
