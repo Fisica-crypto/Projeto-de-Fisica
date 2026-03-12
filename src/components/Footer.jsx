@@ -19,6 +19,7 @@ export default function Footer(){
                     <li>Arthur Lopes Conceição </li>
                     <li>Bruno Soares Santos </li>
                     <li>Deyvid Gabriel Soares Santos</li>
+                    <li>Gabriel Gomes Freitas</li>
                 </ul>
                 </div>
                 <div className="refs">
