@@ -57,7 +57,7 @@ export default function Tempo(){
                     <h3>Resultado</h3>
 
                     <p>Tempo no ar: {tempo} segundos</p>
-                    <p>Tempo até a altura maxima: {TempoSubida} segundos</p>
+                    <p>Tempo até a altura maxima: {TempoSubida}  segundos</p>
                 </div>
 
             )}
