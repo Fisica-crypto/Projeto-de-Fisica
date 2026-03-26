@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import X from '../assets/projetilx.png'
-import './Header.css'
+import '../styles/Header.css'
 
 export default function Header() {
     return (

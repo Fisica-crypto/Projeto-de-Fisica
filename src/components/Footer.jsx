@@ -1,5 +1,5 @@
 import React from "react";
-import './Footer.css'
+import '../styles/Footer.css'
 import { FaEnvelope } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa";
 

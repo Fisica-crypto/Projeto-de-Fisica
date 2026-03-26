@@ -1,5 +1,5 @@
 import React from "react";
-import '../components/Content.css'
+import "../styles/Content.css";
 import { useState } from "react";
 import { calcularAlcance } from "../utils/mov";
 

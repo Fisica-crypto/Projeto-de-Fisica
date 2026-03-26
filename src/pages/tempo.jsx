@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../components/Content.css";
+import "../styles/Content.css";
 import { calcularTempo } from "./mov";
 
 export default function Tempo(){
@@ -25,28 +25,28 @@ export default function Tempo(){
         <div className="Conteudo">
 
             <h1>Tempo de voo do projétil</h1>
+                <div className="Corpo">
+                    <label htmlFor="text">Digite a Velocidade do Corpo:</label> <br />
+                    <select
+                        value={velocidade}
+                        onChange={(e)=>setVelocidade(e.target.value)}>
+                        <option value="20">20 m/s</option>
+                        <option value="30">30 m/s</option>
+                        <option value="40">40 m/s</option>
+                    </select> <br />
 
-            <select
-            value={velocidade}
-            onChange={(e)=>setVelocidade(e.target.value)}
-            >
+                    <label htmlFor="Angle">Digite o valor do ângulo em que é lançado:</label> <br />
+                    <input
+                    type="number"
+                    placeholder="Digite o ângulo"
+                    value={angulo}
+                    onChange={(e)=>setAngulo(e.target.value)}
+                    />
 
-                <option value="20">20 m/s</option>
-                <option value="30">30 m/s</option>
-                <option value="40">40 m/s</option>
-
-            </select>
-
-            <input
-            type="number"
-            placeholder="Digite o ângulo"
-            value={angulo}
-            onChange={(e)=>setAngulo(e.target.value)}
-            />
-
-            <button onClick={calcular}>
-                Calcular tempo
-            </button>
+                </div>
+                <button onClick={calcular}> <br />
+                    Calcular tempo
+                </button>
 
             {tempo !== null &&(
 
