@@ -1,17 +1,40 @@
+/* os links estao fora da tela e eu nao consigo resolver */
+
 .header-container{
-    background: #3b5454;
-    background: linear-gradient(0deg, (0, 0, 0, 1) 0%, rgba(120, 113, 113, 1) 100%);    
-    justify-content: space-evenly;
+    background: #3b5454;   
+    justify-content: space-between;
     align-items: center;
     position: fixed ;
-    height: 200px;
-    width: 105vw;
-    color: #000
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 0 40px;
 }
+.header-left{
+    display: flex;
+    align-items: center;
+}
+
 .header-logo{
-    height: 120px;
-    width: 120px;
+    height: 60px;
 }
-.navbar-links{
-    color: #fff;
+
+.nav-box{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 60px;
+
+    flex-wrap: wrap;
+}
+
+.nav-box li {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
