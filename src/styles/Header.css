@@ -1,18 +1,19 @@
-/* O Header ocupa a largura toda e alinha os blocos (Logo e Nav) */
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Logo na esquerda, Nav no resto */
+    justify-content: space-between; 
     padding: 0 40px;
-    height: 80px; /* Altura fixa de cabeçalho de PC */
+    height: 80px;
     width: 100%;
     box-sizing: border-box;
-    background-color: #3b5454; /* Ou a cor que você preferir */
+    background-color: #3b5454;
 }
 
-/* Garante que a logo não empurre os links pra fora */
+/* 1. Definimos um tamanho fixo para a área da logo */
 .header-left {
-    flex: 0 0 150px; /* Dá um tamanho fixo pra área da logo */
+    flex: 1; /* Ocupa 1 parte do espaço */
+    display: flex;
+    justify-content: flex-start;
 }
 
 .header-logo {
@@ -20,11 +21,18 @@
     width: auto;
 }
 
-/* O segredo para centralizar no PC */
+/* 2. A Nav também ocupa 1 parte, centralizando o conteúdo interno */
 .navbar-box {
-    flex: 1; /* Faz a nav ocupar todo o espaço restante */
+    flex: 2; /* Ocupa o dobro de espaço para garantir o centro */
     display: flex;
-    justify-content: center; /* Centraliza a UL exatamente no meio da tela */
+    justify-content: center;
+}
+
+/* 3. O "Pulo do Gato": Criamos um espaço invisível à direita 
+   com o mesmo peso da logo para equilibrar o centro */
+.header-container::after {
+    content: "";
+    flex: 1; 
 }
 
 .navbar-links {
@@ -32,17 +40,17 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 50px; /* Espaço generoso entre os links para Desktop */
+    gap: 50px;
 }
 
 .navbar-links li a {
     text-decoration: none;
-    color: #333;
+    color: #2c2c2c; /* Ajustei para branco para contrastar com o fundo escuro */
     font-weight: bold;
     font-size: 1.1rem;
     transition: color 0.3s;
 }
 
 .navbar-links li a:hover {
-    color: #007bff; /* Cor quando passa o mouse */
+    color: #ccc; 
 }
