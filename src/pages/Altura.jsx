@@ -16,8 +16,8 @@ export default function Altura() {
         }
         
         // nao esta funcionando esse IF (nao sei o porque, alguem em ajuda por favor)
-        if (ang > 90 && ang > 25) {
-            alert("o angulo tem que ser menor que 91° e maior que 24°")
+        if (ang <= 0 || ang >= 90) {
+            alert("Ângulo deve estar entre 0° e 90° (não inclusivo)");
             return;
         }
 
