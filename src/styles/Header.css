@@ -1,40 +1,48 @@
-/* os links estao fora da tela e eu nao consigo resolver */
-
-.header-container{
-    background: #3b5454;   
-    justify-content: space-between;
-    align-items: center;
-    position: fixed ;
-    height: 100px;
-    width: 100%;
-    top: 0;
-    left: 0;
+/* O Header ocupa a largura toda e alinha os blocos (Logo e Nav) */
+.header-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between; /* Logo na esquerda, Nav no resto */
     padding: 0 40px;
+    height: 80px; /* Altura fixa de cabeçalho de PC */
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #3b5454; /* Ou a cor que você preferir */
 }
-.header-left{
+
+/* Garante que a logo não empurre os links pra fora */
+.header-left {
+    flex: 0 0 150px; /* Dá um tamanho fixo pra área da logo */
+}
+
+.header-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+/* O segredo para centralizar no PC */
+.navbar-box {
+    flex: 1; /* Faz a nav ocupar todo o espaço restante */
     display: flex;
-    align-items: center;
+    justify-content: center; /* Centraliza a UL exatamente no meio da tela */
 }
 
-.header-logo{
-    height: 60px;
-}
-
-.nav-box{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-
+.navbar-links {
     display: flex;
-    gap: 60px;
-
-    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 50px; /* Espaço generoso entre os links para Desktop */
 }
 
-.nav-box li {
-    color: white;
+.navbar-links li a {
     text-decoration: none;
+    color: #333;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #007bff; /* Cor quando passa o mouse */
 }
