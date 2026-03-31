@@ -1,0 +1,56 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 40px;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #3b5454;
+}
+
+/* 1. Definimos um tamanho fixo para a área da logo */
+.header-left {
+    flex: 1; /* Ocupa 1 parte do espaço */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+/* 2. A Nav também ocupa 1 parte, centralizando o conteúdo interno */
+.navbar-box {
+    flex: 2; /* Ocupa o dobro de espaço para garantir o centro */
+    display: flex;
+    justify-content: center;
+}
+
+/* 3. O "Pulo do Gato": Criamos um espaço invisível à direita 
+   com o mesmo peso da logo para equilibrar o centro */
+.header-container::after {
+    content: "";
+    flex: 1; 
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 50px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #2c2c2c; /* Ajustei para branco para contrastar com o fundo escuro */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #ccc; 
+}

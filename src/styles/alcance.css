@@ -1,0 +1,13 @@
+.Conteudo{    
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    background-color: beige;
+    color: #000000;
+    margin-top: 10%;
+    padding: 30px;
+}
+.corpo{
+    display:flex ;
+    justify-content: center;
+}

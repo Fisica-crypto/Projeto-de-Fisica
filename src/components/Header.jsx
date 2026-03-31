@@ -1,13 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import X from '../assets/projetilx.png'
-import './Header.css'
+import '../styles/Header.css'
 
 export default function Header() {
     return (
         <header className="header-container">
-            <div className="header-logo" >
-                <img src={X} alt="LOGO" height='60px' width='60px'/>
+            <div className="header-left" >
+                <img src={X} alt="LOGO" className="header-logo"/>
             </div>
 
             <nav className="navbar-box">
