@@ -1,65 +1,83 @@
-import { React, useState } from "react";
+import { useState } from "react";
 import "../styles/Altura.css";
 
 export default function Altura() {
-       const [velocidade, setVelocidade] = useState("") ;
-       const [angulo, setAngulo ] = useState("");
-       const [altura, setAltura] = useState(null);
+  const [velocidade, setVelocidade] = useState("");
+  const [angulo, setAngulo] = useState("");
+  const [gravidade, setGravidade] = useState("");     // começa vazio
+  const [altura, setAltura] = useState(null);
+  const [erro, setErro] = useState("");
 
-       const calcularAltura = () => {
-        const v0 = parseFloat(velocidade);
-        const ang = parseFloat(angulo);
+  const calcularAltura = () => {
+    const v0 = parseFloat(velocidade);
+    const ang = parseFloat(angulo);
+    const g = parseFloat(gravidade);
 
-        if (isNaN(v0) || isNaN(ang)) {
-            alert("digite valores validos!")
-            return;
-        }
-        
-       
-        if (ang <= 0 || ang >= 90) {
-            alert("Ângulo deve estar entre 0° e 90° (não inclusivo)");
-            return;
-        }
+    setErro("");
 
-        if ( v0 > 30 ) {
-            alert("A velocidade inicial tem que ser menor que 31 m/s")
-            return;
-        }
+    // Validações
+    if (isNaN(v0) || isNaN(ang) || isNaN(g)) {
+      setErro("Por favor, preencha todos os campos com valores válidos!");
+      return;
+    }
 
-        const g = 9.8;
+    if (ang <= 0 || ang >= 90) {
+      setErro("O ângulo deve estar entre 0° e 90° (não inclusivo)");
+      return;
+    }
 
-        // converte graus para radianos
-        const rad = (ang * Math.PI) / 180;
+    if (v0 <= 0 || v0 > 30) {
+      setErro("A velocidade inicial deve ser maior que 0 e menor ou igual a 30 m/s");
+      return;
+    }
 
-        // formula da altura maxima
-        const h = (v0 ** 2 * Math.sin(rad) ** 2) / (2 * g);
+    if (g <= 0) {
+      setErro("A gravidade deve ser maior que 0 m/s²");
+      return;
+    }
 
-        setAltura(h.toFixed(2));
-       };
+    // Cálculo da altura máxima
+    const rad = (ang * Math.PI) / 180;
+    const h = (v0 ** 2 * Math.sin(rad) ** 2) / (2 * g);
 
-       return(
-        <div className="container">
-            <h2>Altura Maxima do Lançamento oblíquo</h2>
+    setAltura(h.toFixed(2));
+  };
 
-            <input 
-            type="number" 
-            placeholder="velocidade inicial (m/s)"
-            value={velocidade}
-            onChange={(e) => setVelocidade(e.target.value)}
-            />
+  return (
+    <div className="container">
+      <h2>Altura Máxima do Lançamento Oblíquo</h2>
 
-            <input 
-            type="number"
-            placeholder="Ângulo (graus)"
-            value={angulo}
-            onChange={(e) => setAngulo(e.target.value)}
-            />
+      <input
+        type="number"
+        placeholder="Velocidade inicial (m/s)"
+        value={velocidade}
+        onChange={(e) => setVelocidade(e.target.value)}
+      />
 
-            <button onClick={calcularAltura}>Calcular</button>
+      <input
+        type="number"
+        placeholder="Ângulo (graus)"
+        value={angulo}
+        onChange={(e) => setAngulo(e.target.value)}
+      />
 
-            {altura !== null && (
-                <p>Altura Máxima: {altura}m </p>
-            )}
-        </div>
-       )
+      <input
+        type="number"
+        placeholder="Gravidade g (m/s²) - Digite o valor desejado"
+        value={gravidade}
+        onChange={(e) => setGravidade(e.target.value)}
+        step="0.01"
+      />
+
+      <button onClick={calcularAltura}>Calcular Altura Máxima</button>
+
+      {erro && <p className="erro">{erro}</p>}
+
+      {altura !== null && !erro && (
+        <p className="resultado">
+          <strong>Altura Máxima:</strong> {altura} m
+        </p>
+      )}
+    </div>
+  );
 }
