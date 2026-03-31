@@ -26,7 +26,7 @@ export default function Alcance() {
                 <select onChange={(e) => setVelocidade(e.target.value)}>
                     <option value='20'>20m/s</option>
                     <option value="30">30m/s</option>
-                    <option value="40m">40ms</option>
+                    <option value="40">40m/s</option>
                 </select>
 
                 <input

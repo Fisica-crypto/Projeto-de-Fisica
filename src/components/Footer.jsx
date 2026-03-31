@@ -39,8 +39,8 @@ export default function Footer(){
                 <div className="refs">
                 <h3>Meios de contato</h3>
                 <ul>
-                    <li><FaEnvelope/>  Email: fisicaprojeto98@gmail.com</li>
-                     <li><FaPhone/>  Telefone: 123456789-01</li>
+                    <li><FaEnvelope/> <a href="mailto:fisicaprojeto98@gmail.com"> Email: fisicaprojeto98@gmail.com </a></li>
+                     <li><FaPhone/>  <a href="tel:123456789-01">Telefone: 123456789-01 </a>  </li>
                 </ul>
                 </div>
             </div>
