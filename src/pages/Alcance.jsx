@@ -21,7 +21,7 @@ export default function Alcance() {
     return (
         <>
             <div className="Conteudo">
-                <h1>Primeiro teste do simulador</h1>
+                <h1>Alcance</h1>
 
                     <label htmlFor="">Velocidade m/s</label><br />
 

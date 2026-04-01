@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { calcularTempo } from "./mov";
+import { calcularTempo } from "../utils/mov";
 import '../styles/tempo.css'
 
 export default function Tempo(){
