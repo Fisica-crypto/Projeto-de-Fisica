@@ -10,10 +10,22 @@ export function calcularAlcance(v0, angulo ){
     return (2 * v0 * Math.cos(angRad)) / g;
 }
 
-export function calcularAltura(velocidade, angulo){
+export function calcularAltura(velocidade, angulo, gravidade){
         const v0 = parseFloat(velocidade);
         const ang = grausParaRad(angulo);
+        const g = parseFloat(gravidade)
+        var Erro = ''
+        
+        
+        if (isNaN(v0) || isNaN(ang) || isNaN(g)) {
+            Erro("Por favor, preencha todos os campos com valores válidos!");
+            return;
+        }
 
+        if (ang <= 0 || ang >= 90) {
+            Erro("O ângulo deve estar entre 0° e 90° (não inclusivo)");
+            return;
+        }
 
         if (isNaN(v0) || isNaN(ang)) {
             alert("digite valores validos!")

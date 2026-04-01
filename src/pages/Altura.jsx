@@ -1,44 +1,62 @@
-import { React, useState } from "react";
-import { calcularAltura } from "../utils/mov.js";
+import { useState } from "react";
+import { calcularAltura } from "../utils/mov";
 import "../styles/Altura.css";
 
 export default function Altura() {
-       const [velocidade, setVelocidade] = useState("") ;
-       const [angulo, setAngulo ] = useState("");
-       const [altura, setAltura] = useState(null);
-       
-       function LancarObj(){
-        if (angulo === '') return;
-        const resultado = calcularAltura(
-            Number(velocidade),
-            Number(angulo)
-        );
-        setAltura(resultado.toFixed(2))
-       }
+  const [velocidade, setVelocidade] = useState("");
+  const [angulo, setAngulo] = useState("");
+  const [gravidade, setGravidade] = useState("");     // começa vazio
+  const [altura, setAltura] = useState(null);
+  const [erro, setErro] = useState("");
 
-       return(
-        <div className="container">
-            <h2>Altura Maxima do Lançamento oblíquo</h2>
+  function LancarObj(){
+    setErro('');
+      if (angulo === '') return;
+    
+      const resultado = calcularAltura(
+             Number(velocidade),
+             Number(angulo),
+             Number(gravidade),
+         );
+    
+    setAltura(resultado.toFixed(2))
+  }
 
-            <input 
-            type="number" 
-            placeholder="velocidade inicial (m/s)"
-            value={velocidade}
-            onChange={(e) => setVelocidade(e.target.value)}
-            />
+  return (
+    <div className="container">
+      <h2>Altura Máxima do Lançamento Oblíquo</h2>
 
-            <input 
-            type="number"
-            placeholder="Ângulo (graus)"
-            value={angulo}
-            onChange={(e) => setAngulo(e.target.value)}
-            />
+      <input
+        type="number"
+        placeholder="Velocidade inicial (m/s)"
+        value={velocidade}
+        onChange={(e) => setVelocidade(e.target.value)}
+      />
 
-            <button onClick={LancarObj}>Calcular</button>
+      <input
+        type="number"
+        placeholder="Ângulo (graus)"
+        value={angulo}
+        onChange={(e) => setAngulo(e.target.value)}
+      />
 
-            {altura !== null && (
-                <p>Altura Máxima: {altura}m </p>
-            )}
-        </div>
-       )
+      <input
+        type="number"
+        placeholder="Gravidade g (m/s²) - Digite o valor desejado"
+        value={gravidade}
+        onChange={(e) => setGravidade(e.target.value)}
+        step="0.01"
+      />
+
+      <button onClick={LancarObj}>Calcular</button>
+
+      {erro && <p className="erro">{erro}</p>}
+
+      {altura !== null && !erro && (
+        <p className="resultado">
+          <strong>Altura Máxima:</strong> {altura} m
+        </p>
+      )}
+    </div>
+  );
 }
