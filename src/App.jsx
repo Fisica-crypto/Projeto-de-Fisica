@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Alcance from "./pages/Alcance";
 import Altura from "./pages/Altura";
 import Tempo from "./pages/tempo";
+import Home from "./pages/Home";
 
 export default function App() {
   return (
@@ -11,9 +12,10 @@ export default function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Tempo />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Altura" element={<Altura />} />
         <Route path="/Alcance" element={<Alcance />} />
+        <Route path="/Tempo" element={<Tempo />} />
       </Routes>
 
       <Footer/>

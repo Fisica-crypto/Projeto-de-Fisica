@@ -1,56 +1,61 @@
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    padding: 0 40px;
-    height: 80px;
     width: 100%;
-    box-sizing: border-box;
-    background-color: #3b5454;
+    display: flex;
+    justify-content: center;
+    background: green;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1200rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 490px;
 }
 
 /* 1. Definimos um tamanho fixo para a área da logo */
 .header-left {
-    flex: 1; /* Ocupa 1 parte do espaço */
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-logo {
-    max-height: 50px;
-    width: auto;
+    max-height: 60px;
+    margin-top: 10px;
+    
 }
 
 /* 2. A Nav também ocupa 1 parte, centralizando o conteúdo interno */
 .navbar-box {
-    flex: 2; /* Ocupa o dobro de espaço para garantir o centro */
     display: flex;
-    justify-content: center;
-}
-
-/* 3. O "Pulo do Gato": Criamos um espaço invisível à direita 
-   com o mesmo peso da logo para equilibrar o centro */
-.header-container::after {
-    content: "";
-    flex: 1; 
+    justify-content: flex-end;
+    margin-right: 40px; /* isso daqui esta mudando o footer mas é para mover o header */
 }
 
 .navbar-links {
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 50px;
+    gap: 10px;
 }
 
 .navbar-links li a {
     text-decoration: none;
-    color: #2c2c2c; /* Ajustei para branco para contrastar com o fundo escuro */
+    color: #000000; /* Ajustei para branco para contrastar com o fundo escuro */
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     transition: color 0.3s;
 }
 
 .navbar-links li a:hover {
     color: #ccc; 
+}
+
+h1 {
+    white-space: nowrap;
 }
