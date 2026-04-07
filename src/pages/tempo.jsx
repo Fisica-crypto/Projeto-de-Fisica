@@ -23,8 +23,8 @@ export default function Tempo(){
     return(
 
         <div className="body">
-            <h1>Tempo de voo do projétil</h1>
                 <div className="Principal">
+            <h1>Tempo de voo do projétil</h1>
                     <div className="card"> 
                     <label htmlFor="text" >Digite a Velocidade do Corpo:</label> <br />
                             <select
@@ -35,7 +35,7 @@ export default function Tempo(){
                                 <option value="40">40 m/s</option>
                             </select> <br />
                     </div>
-                    <div className="cards">
+                    <div className="card">
 
                     <label htmlFor="Angle" >Digite o valor do ângulo em que é lançado:</label> <br />
                     <input
@@ -44,21 +44,20 @@ export default function Tempo(){
                     value={angulo}
                     onChange={(e)=>setAngulo(e.target.value)}
                     />
+                        <button onClick={calcular} className="BotaoEnviar"> <br />
+                            Calcular tempo
+                        </button>
                     </div>
 
-                    <button onClick={calcular} className="BotaoEnviar"> <br />
-                        Calcular tempo
-                    </button>
-                </div>
-
                 {tempo !== null &&(
-
+                    
                     <div className="result">
                         <h3>Resultado</h3>
                         <p>Tempo no ar: {tempo} segundos</p>
                     </div>
             )}
+            </div>
         </div>
 
-    );
+    ); 
 }
