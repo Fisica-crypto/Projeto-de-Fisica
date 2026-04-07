@@ -8,6 +8,8 @@ export default function Tempo(){
     const [angulo, setAngulo] = useState("");
     const [tempo, setTempo] = useState(null);
 
+
+    const [subidatempo, setsubidatempo] = useState(null); 
     function calcular(){
 
         if(angulo === "") return;
@@ -18,6 +20,9 @@ export default function Tempo(){
         const resultado = calcularTempo(v, a);
 
         setTempo(resultado.toFixed(2));
+        const subida = resultado/2
+        setTempo(resultado.toFixed(2));
+        setsubidatempo(subida.toFixed(2))
     }
 
     return(
@@ -56,6 +61,7 @@ export default function Tempo(){
                     <div className="result">
                         <h3>Resultado</h3>
                         <p>Tempo no ar: {tempo} segundos</p>
+                        <p>Tempo até a altura máxima: {subidatempo}</p>
                     </div>
             )}
         </div>
