@@ -42,34 +42,41 @@ export default function Home(){
     }
 
     return(
-        <div className="Section">
+        <div className="corpo">
 
-            <h1>Simulador de Lançamento Oblíquo</h1>
+            <div id="Request">
+                  <div className="input">
+                    <p>Valor da Velocidade, em metros:</p>
+                    <input
+                        type="number"
+                        placeholder="Velocidade (m/s)"
+                        value={velocidade}
+                        onChange={(e)=>setVelocidade(e.target.value)}
+                        className="insert"
+                        />
+                  </div>
+                  <div className="input">
+                    <p className="text">Valor do ângulo: </p>
+                      <input
+                          type="number"
+                          placeholder="Ângulo (graus)"
+                          value={angulo}
+                          onChange={(e)=>setAngulo(e.target.value)}
+                          className="insert"
+                          />
+                  </div>
+                  <div className="input">
+                      <p className="text">Valor da gravidade(aceleração): </p>
+                      <input
+                          type="number"
+                          placeholder="Gravidade (9.8 padrão)"
+                          value={gravidade}
+                          onChange={(e)=>setGravidade(e.target.value)}
+                          className="insert"
+                          />
 
-            <div className="inputs">
-
-                <input
-                    type="number"
-                    placeholder="Velocidade (m/s)"
-                    value={velocidade}
-                    onChange={(e)=>setVelocidade(e.target.value)}
-                />
-
-                <input
-                    type="number"
-                    placeholder="Ângulo (graus)"
-                    value={angulo}
-                    onChange={(e)=>setAngulo(e.target.value)}
-                />
-
-                <input
-                    type="number"
-                    placeholder="Gravidade (9.8 padrão)"
-                    value={gravidade}
-                    onChange={(e)=>setGravidade(e.target.value)}
-                />
-
-                <button onClick={calcular}>
+                  </div>
+                <button onClick={calcular} className="btn-enviar">
                     Calcular
                 </button>
 
@@ -78,58 +85,30 @@ export default function Home(){
             {erro && <p className="erro">{erro}</p>}
 
             {tempo && (
-                <div className="resultados">
+              <div id="container-results">
+                <div className="results">
+                    <div className="left">
+                      <h2>Resultados</h2>
+                    
+                    </div>
+                      <p>Tempo de voo: {tempo} s</p>
+                    <div className="left">
+                      <p>Alcance: {alcance} m</p>
+                    </div>
+                    <div className="left">
+                      <p>Altura máxima: {altura} m</p>
+                    </div>
+                    <div className="left">
+                      <p>Tempo até altura máxima: {(tempo/2).toFixed(2)} s</p>
 
-                    <h2>Resultados</h2>
-
-                    <p>Tempo de voo: {tempo} s</p>
-                    <p>Alcance: {alcance} m</p>
-                    <p>Altura máxima: {altura} m</p>
-                    <p>Tempo até altura máxima: {(tempo/2).toFixed(2)} s</p>
-
+                    </div>
+                </div>
+                  <div id="right">
+                    <h1>ANIMAÇÃO</h1>
+                  </div>
                 </div>
             )}
 
-        </div>
+            </div>
     );
-}
-{/* 
-import "../styles/Home.css";
-
-export default function Home() {
-  return (
-    <div className="corpo">
-      <div id="input">
-        <div>
-          <span>Valor do ângulo:</span>
-          <input type="text" />
-        </div>
-        <div>
-          <span>Gravidade:</span>
-          <input type="text" />
-        </div>
-        <div>
-          <span>Velocidade:</span>
-          <input type="text" />
-        </div>
-      </div>
-      <div id="container-results">
-        <div id="left">
-          <div>
-            <span>Altura:</span>
-          </div>
-          <div>
-            <span>Alcance:</span>
-          </div>
-          <div>
-            <span>Tempo:</span>
-          </div>
-        </div>
-        <div id="right">
-          <h1>ANIMAÇÃO</h1>
-        </div>
-      </div>
-    </div>
-  );
-}
-*/}
+  }
