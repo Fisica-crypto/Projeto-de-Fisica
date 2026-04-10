@@ -5,6 +5,7 @@ import Alcance from "./pages/Alcance";
 import Altura from "./pages/Altura";
 import Tempo from "./pages/tempo";
 import Home from "./pages/Home";
+import Obliquo from "./pages/Exemplos";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/Altura" element={<Altura />} />
         <Route path="/Alcance" element={<Alcance />} />
         <Route path="/Tempo" element={<Tempo />} />
+        <Route path="/Exemplos" element={<Obliquo />} />
       </Routes>
 
       <Footer/>
