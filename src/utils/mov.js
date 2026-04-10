@@ -38,11 +38,6 @@ export function calcularAltura(velocidade, angulo, gravidade){
             return;
         }
 
-        if ( v0 > 30 ) {
-            alert("A velocidade inicial tem que ser menor que 31 m/s")
-            return;
-        }
-
        return( (v0 ** 2 * Math.sin(ang) ** 2) / (2 * g)
         )
        };

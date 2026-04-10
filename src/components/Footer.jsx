@@ -17,7 +17,7 @@ export default function Footer(){
                 <ul>
                     <li>Alexandre Antunes dos Santos</li>
                     <li>Arthur Lopes Conceição </li>
-                    <li>Arthru Luigi Costa Barros</li>
+                    <li>Arthur Luigi Costa Barros</li>
                     <li>Bruno Soares Santos </li>
                     <li>Deyvid Gabriel Soares Santos</li>
                     <li>Guilherme Soares Silva</li>
@@ -32,12 +32,14 @@ export default function Footer(){
                     <li>Lourenço Silva Aguiar</li>
                     <li>Rihanna Byanca Gomes Lima Farias </li>
                     <li>Victor Gabriel De Sousa Dos Santos</li>
+                    <li>João Manoel</li>
                 </ul>
                 </div>
                 <div className="refs">
                 <h3>Coordenador do Projeto</h3>
                 <ul>
                     <li>Mestre Roberto Kennedy Cardoso</li>
+                    <li>Francisco Cristiano da Silva Macedo</li>
                 </ul>
                 </div>
                 <div className="refs">

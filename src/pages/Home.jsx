@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
 import { calcularAlcance, calcularAltura, calcularTempo } from "../utils/mov";
+import Animation from "../components/Animation";
 
 export default function Home(){
 
@@ -11,6 +12,8 @@ export default function Home(){
     const [tempo, setTempo] = useState(null);
     const [alcance, setAlcance] = useState(null);
     const [altura, setAltura] = useState(null);
+
+    const [restart, setRestart] = useState(false);
 
     const [erro, setErro] = useState("");
 
@@ -39,7 +42,9 @@ export default function Home(){
         setTempo(t.toFixed(2));
         setAlcance(al.toFixed(2));
         setAltura(h.toFixed(2));
-    }
+        
+        setRestart(prev => !prev);
+      }
 
     return(
         <div className="corpo">
@@ -104,7 +109,12 @@ export default function Home(){
                     </div>
                 </div>
                   <div id="right">
-                    <h1>ANIMAÇÃO</h1>
+                    <Animation
+                    velocidade={Number(velocidade)}
+                    angulo={Number(angulo)}
+                    gravidade={Number(gravidade)}
+                    restart={restart}
+                    />
                   </div>
                 </div>
             )}
