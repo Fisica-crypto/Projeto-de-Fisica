@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import { calcularAlcance, calcularAltura, calcularTempo } from "../utils/mov";
 import Animation from "../components/Animation";
+import Resultado from "../components/resultado";
 
 export default function Home(){
 
@@ -14,12 +15,14 @@ export default function Home(){
     const [altura, setAltura] = useState(null);
 
     const [restart, setRestart] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const [erro, setErro] = useState("");
 
     function calcular(){
 
         setErro("");
+        setShowModal(false);
 
         if(velocidade === "" || angulo === ""){
             setErro("Preencha velocidade e ângulo");
@@ -30,27 +33,34 @@ export default function Home(){
         const a = Number(angulo);
         const g = Number(gravidade);
 
-        if(a <= 0 || a >= 90){
+        if(a <= 0 || a >= 91){
             setErro("Ângulo deve estar entre 0 e 90");
             return;
         }
 
-        const t = calcularTempo(v, a);
-        const al = calcularAlcance(v, a);
+        const t = calcularTempo(v, a, g);
+        const al = calcularAlcance(v, a, g);
         const h = calcularAltura(v, a, g);
 
         setTempo(t.toFixed(2));
         setAlcance(al.toFixed(2));
         setAltura(h.toFixed(2));
-        
+
+        // reinicia animação
         setRestart(prev => !prev);
-      }
+    }
+
+    function abrirModal(){
+        setShowModal(true);
+    }
 
     return(
         <div className="corpo">
 
+            {/* INPUTS */}
             <div id="Request">
-                  <div className="input">
+
+                <div className="input">
                     <p>Valor da Velocidade, em metros:</p>
                     <input
                         type="number"
@@ -58,29 +68,31 @@ export default function Home(){
                         value={velocidade}
                         onChange={(e)=>setVelocidade(e.target.value)}
                         className="insert"
-                        />
-                  </div>
-                  <div className="input">
-                    <p className="text">Valor do ângulo: </p>
-                      <input
-                          type="number"
-                          placeholder="Ângulo (graus)"
-                          value={angulo}
-                          onChange={(e)=>setAngulo(e.target.value)}
-                          className="insert"
-                          />
-                  </div>
-                  <div className="input">
-                      <p className="text">Valor da gravidade(aceleração): </p>
-                      <input
-                          type="number"
-                          placeholder="Gravidade (9.8 padrão)"
-                          value={gravidade}
-                          onChange={(e)=>setGravidade(e.target.value)}
-                          className="insert"
-                          />
+                    />
+                </div>
 
-                  </div>
+                <div className="input">
+                    <p>Valor do ângulo:</p>
+                    <input
+                        type="number"
+                        placeholder="Ângulo (graus)"
+                        value={angulo}
+                        onChange={(e)=>setAngulo(e.target.value)}
+                        className="insert"
+                    />
+                </div>
+
+                <div className="input">
+                    <p>Valor da gravidade:</p>
+                    <input
+                        type="number"
+                        placeholder="Gravidade (9.8 padrão)"
+                        value={gravidade}
+                        onChange={(e)=>setGravidade(e.target.value)}
+                        className="insert"
+                    />
+                </div>
+
                 <button onClick={calcular} className="btn-enviar">
                     Calcular
                 </button>
@@ -89,36 +101,31 @@ export default function Home(){
 
             {erro && <p className="erro">{erro}</p>}
 
-            {tempo && (
-              <div id="container-results">
-                <div className="results">
-                    <div className="left">
-                      <h2>Resultados</h2>
-                    
-                    </div>
-                      <p>Tempo de voo: {tempo} s</p>
-                    <div className="left">
-                      <p>Alcance: {alcance} m</p>
-                    </div>
-                    <div className="left">
-                      <p>Altura máxima: {altura} m</p>
-                    </div>
-                    <div className="left">
-                      <p>Tempo até altura máxima: {(tempo/2).toFixed(2)} s</p>
+            {/* CONTAINER ANIMAÇÃO + RESULTADOS */}
+            <div id="container-results">
 
-                    </div>
-                </div>
-                  <div id="right">
+                {/* ANIMAÇÃO SEMPRE VISÍVEL */}
+                <div id="right">
                     <Animation
-                    velocidade={Number(velocidade)}
-                    angulo={Number(angulo)}
-                    gravidade={Number(gravidade)}
-                    restart={restart}
+                        velocidade={Number(velocidade)}
+                        angulo={Number(angulo)}
+                        gravidade={Number(gravidade)}
+                        restart={restart}
+                        onFinish={abrirModal}
                     />
-                  </div>
                 </div>
+            </div>
+
+            {/* MODAL */}
+            {showModal && (
+                <Resultado
+                    tempo={tempo}
+                    alcance={alcance}
+                    altura={altura}
+                    onClose={() => setShowModal(false)}
+                />
             )}
 
-            </div>
+        </div>
     );
-  }
+}
