@@ -5,7 +5,7 @@
   color: #000;
   background-color: #E4E4E4;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
 }
 
 #container-results{
@@ -21,7 +21,7 @@
   width: 100%;
   height: 200px;
 }
-#right{
+#right{ 
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
   background-color: #d45858;
   border: #000 solid 6px;
   width: 100%;
-  height: 500px;
+  height: 60vh;
   overflow: hidden;
 }
 .results{
@@ -46,4 +46,15 @@
 }
 .insert{
   background-color: #676767;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #container-results {
+    flex-direction: column;
+  }
+
+  #right {
+    height: 300px;
+  }
 }

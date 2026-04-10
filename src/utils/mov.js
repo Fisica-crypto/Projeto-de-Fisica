@@ -1,13 +1,14 @@
-const g = 9.8; //Aqui define a gravidade fixa.
+const g = 9.8
 
 export function grausParaRad(angulo){
     return angulo * (Math.PI/180); //o JS não usa o Graus(angulos) normais, então tem que usar o radiano
 }
 
-export function calcularAlcance(v0, angulo ){
+export function calcularAlcance(velocidade, angulo){
     const angRad = grausParaRad(angulo);  //usa o radiano calculado.
+    const t = (calcularTempo(velocidade, angulo)) / 2
 
-    return (2 * v0 * Math.cos(angRad)) / g;
+    return (2 * velocidade * Math.cos(angRad)) * t;
 }
 
 export function calcularAltura(velocidade, angulo, gravidade){
@@ -44,7 +45,7 @@ export function calcularAltura(velocidade, angulo, gravidade){
 
 export function calcularTempo(velocidade, angulo){
 
-    const rad = angulo * (Math.PI / 180);
+    const rad = grausParaRad(angulo)
 
     const tempo = (2 * velocidade * Math.sin(rad)) / g;
 
