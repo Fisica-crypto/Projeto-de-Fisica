@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import X from '../assets/projetilx.png';
 import '../styles/Header.css';
@@ -25,6 +24,7 @@ export default function Header() {
                         <li><Link to="/Altura">Altura</Link></li>
                         <li><Link to="/Alcance">Alcance</Link></li>
                         <li><Link to="/Tempo">Tempo</Link></li>
+                         <li><Link to="/Exemplos">Como usar</Link></li>
                     </ul>
                 </nav>
 
