@@ -2,6 +2,8 @@ import home from "../assets/Home.png";
 import altura from "../assets/Altura.png";
 import alcance from "../assets/Alcance.png";
 import tempo from "../assets/Tempo.png";
+import "../styles/Exemplos.css"
+import { MdPadding } from "react-icons/md";
 function Obliquo() {
   return (
     <div>

@@ -24,7 +24,8 @@ export default function Header() {
                         <li><Link to="/Altura">Altura</Link></li>
                         <li><Link to="/Alcance">Alcance</Link></li>
                         <li><Link to="/Tempo">Tempo</Link></li>
-                         <li><Link to="/Exemplos">Como usar</Link></li>
+                        <li><Link to="/Exemplos">Como usar</Link></li>
+                        <li><Link to="/Sobre">Sobre</Link></li>
                     </ul>
                 </nav>
 
