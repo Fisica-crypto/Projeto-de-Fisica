@@ -1,82 +1,63 @@
-import home from "../assets/Home.png";
-import altura from "../assets/Altura.png";
-import alcance from "../assets/Alcance.png";
-import tempo from "../assets/Tempo.png";
-function Obliquo() {
+import home from '../assets/Home.png'
+import altura from '../assets/Altura.png'
+import alcance from '../assets/Alcance.png'
+import tempo from '../assets/Tempo.png'
+import '../styles/Exemplos.css'
+
+export default function Obliquo() {
   return (
-    <div>
+    <div className="corpo-exemplos">
       <h1>Como usar o nosso site</h1>
-      <p>
-        Este guia explica como utilizar cada funcionalidade do site para calcular
-        e entender o lançamento oblíquo.
-      </p>
 
-      <h2>1. Home</h2>
-      <img src={home} alt="Tela inicial do site" />
+      <div className="card">
+        <p>
+          Este guia explica como utilizar cada funcionalidade do site para calcular
+          e entender o lançamento oblíquo.
+        </p>
+      </div>
 
-      <p>
-        A página inicial é a principal do site. Nela, você pode inserir os dados
-        e obter todos os resultados do lançamento oblíquo.
-      </p>
+      <div className="card">
+        <h2>1. Home</h2>
+        <img src={home} alt="Tela inicial do site" className="imagem-exemplo"/>
 
-      <ul>
-        <li><strong>Velocidade inicial:</strong> valor em m/s</li>
-        <li><strong>Ângulo:</strong> valor em graus</li>
-        <li><strong>Gravidade:</strong> normalmente 9,8 m/s²</li>
-      </ul>
+        <p>
+          A página inicial é a principal do site. Nela, você pode inserir os dados
+          e obter todos os resultados.
+        </p>
 
-      <p>Após preencher, clique em <strong>"Calcular"</strong>.</p>
+        <ul>
+          <li><strong>Velocidade inicial:</strong> m/s</li>
+          <li><strong>Ângulo:</strong> graus</li>
+          <li><strong>Gravidade:</strong> 9,8 m/s²</li>
+        </ul>
+      </div>
 
-      <p>Resultados exibidos:</p>
-      <ul>
-        <li>Alcance</li>
-        <li>Altura</li>
-        <li>Tempo de voo</li>
-        <li>Tempo até a altura máxima</li>
-      </ul>
+      <div className="card">
+        <h2>2. Altura</h2>
+        <img src={altura} alt="Tela Altura" className="imagem-exemplo"/>
+        <p>Calcula a altura máxima do projétil.</p>
+      </div>
 
-      <h2>2. Altura</h2>
-      <p>
-        Nesta página, o sistema calcula a altura máxima atingida pelo projétil.
-      </p>
-      <img src={altura} alt="Tela Altura" />
-      <p>
-        Insira os valores necessários e clique em calcular para obter o resultado da altura.
-      </p>
+      <div className="card">
+        <h2>3. Alcance</h2>
+        <img src={alcance} alt="Tela Alcance" className="imagem-exemplo"/>
+        <p>Mostra a distância horizontal percorrida.</p>
+      </div>
 
-      <h2>3. Alcance</h2>
-      <p>
-        A página de alcance mostra a distância horizontal percorrida pelo objeto.
-      </p>
-      <img src={alcance} alt="Tela do Alcance" />
-      <p>
-        Após inserir os dados, clique em calcular para ver o resultado.
-      </p>
+      <div className="card">
+        <h2>4. Tempo</h2>
+        <img src={tempo} alt="Tela Tempo" className="imagem-exemplo"/>
+        <p>Calcula o tempo total de voo.</p>
+      </div>
 
-      <h2>4. Tempo</h2>
-      <p>
-        Nesta seção, você pode calcular o tempo de voo do projétil.
-      </p>
-      <img src={tempo} alt="Tela do Tempo" />
-      <p>
-        Basta preencher os campos e clicar em calcular.
-      </p>
-
-      <h2>5. Como usar</h2>
-      <p>
-        Esta página serve como guia para ajudar o usuário a entender todas as
-        funcionalidades do site.
-      </p>
-
-      <h2>Dicas de uso</h2>
-      <ul>
-        <li>Use valores positivos</li>
-        <li>Ângulos entre 0° e 90°</li>
-        <li>Utilize 9,8 m/s² como gravidade padrão</li>
-        <li>Teste diferentes valores para aprender melhor</li>
-      </ul>
+      <div className="card">
+        <h2>Dicas</h2>
+        <ul>
+          <li>Use valores positivos</li>
+          <li>Ângulos entre 0° e 90°</li>
+          <li>Gravidade padrão: 9,8 m/s²</li>
+        </ul>
+      </div>
     </div>
   );
 }
-
-export default Obliquo;

@@ -1,13 +1,62 @@
-.Conteudo{    
+.corpo {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
-    text-align: justify;
-    background-color: beige;
-    color: #000000;
-    margin-top: 10%;
-    padding: 30px;
+    height: 100vh;
+    background-color: #0b1a33;
 }
-.corpo{
-    display:flex ;
-    justify-content: center;
+
+.Conteudo {
+    background-color: #1f2a44;
+    padding: 40px;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+    color: #fff;
+}
+
+.Conteudo h1 {
+    margin-bottom: 20px;
+}
+
+.Conteudo label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.Conteudo input,
+.Conteudo select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.Conteudo button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #22c55e;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Conteudo button:hover {
+    background-color: #16a34a;
+}
+
+.resultado {
+    margin-top: 20px;
+}
+
+.erro {
+    color: #ff4d4d;
+    margin-top: 10px;
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import { calcularAlcance, calcularAltura, calcularTempo } from "../utils/mov";
 import Animation from "../components/Animation";
-import Resultado from "../components/resultado";
 
 export default function Home(){
 
@@ -15,14 +14,11 @@ export default function Home(){
     const [altura, setAltura] = useState(null);
 
     const [restart, setRestart] = useState(false);
-    const [showModal, setShowModal] = useState(false);
-
     const [erro, setErro] = useState("");
 
     function calcular(){
 
         setErro("");
-        setShowModal(false);
 
         if(velocidade === "" || angulo === ""){
             setErro("Preencha velocidade e ângulo");
@@ -33,8 +29,18 @@ export default function Home(){
         const a = Number(angulo);
         const g = Number(gravidade);
 
+        if(isNaN(v) || isNaN(a) || isNaN(g)){
+            setErro("Digite apenas números válidos");
+            return;
+        }
+
         if(a <= 0 || a >= 91){
             setErro("Ângulo deve estar entre 0 e 90");
+            return;
+        }
+
+        if(v <= 0 || g <= 0){
+            setErro("Velocidade e gravidade devem ser maiores que 0");
             return;
         }
 
@@ -46,12 +52,7 @@ export default function Home(){
         setAlcance(al.toFixed(2));
         setAltura(h.toFixed(2));
 
-        // reinicia animação
         setRestart(prev => !prev);
-    }
-
-    function abrirModal(){
-        setShowModal(true);
     }
 
     return(
@@ -61,10 +62,9 @@ export default function Home(){
             <div id="Request">
 
                 <div className="input">
-                    <p>Valor da Velocidade, em metros:</p>
+                    <p>Velocidade (m/s)</p>
                     <input
                         type="number"
-                        placeholder="Velocidade (m/s)"
                         value={velocidade}
                         onChange={(e)=>setVelocidade(e.target.value)}
                         className="insert"
@@ -72,10 +72,9 @@ export default function Home(){
                 </div>
 
                 <div className="input">
-                    <p>Valor do ângulo:</p>
+                    <p>Ângulo (graus)</p>
                     <input
                         type="number"
-                        placeholder="Ângulo (graus)"
                         value={angulo}
                         onChange={(e)=>setAngulo(e.target.value)}
                         className="insert"
@@ -83,10 +82,9 @@ export default function Home(){
                 </div>
 
                 <div className="input">
-                    <p>Valor da gravidade:</p>
+                    <p>Gravidade (m/s²)</p>
                     <input
                         type="number"
-                        placeholder="Gravidade (9.8 padrão)"
                         value={gravidade}
                         onChange={(e)=>setGravidade(e.target.value)}
                         className="insert"
@@ -101,30 +99,29 @@ export default function Home(){
 
             {erro && <p className="erro">{erro}</p>}
 
-            {/* CONTAINER ANIMAÇÃO + RESULTADOS */}
+            {/* RESULTADOS + ANIMAÇÃO */}
             <div id="container-results">
 
-                {/* ANIMAÇÃO SEMPRE VISÍVEL */}
                 <div id="right">
                     <Animation
                         velocidade={Number(velocidade)}
                         angulo={Number(angulo)}
                         gravidade={Number(gravidade)}
                         restart={restart}
-                        onFinish={abrirModal}
                     />
                 </div>
-            </div>
 
-            {/* MODAL */}
-            {showModal && (
-                <Resultado
-                    tempo={tempo}
-                    alcance={alcance}
-                    altura={altura}
-                    onClose={() => setShowModal(false)}
-                />
-            )}
+                {/* RESULTADOS FIXOS (SEM MODAL) */}
+                {tempo && (
+                    <div id="results-box">
+                        <h2>Resultados</h2>
+                        <p>⏱ Tempo: {tempo} s</p>
+                        <p>📏 Alcance: {alcance} m</p>
+                        <p>📈 Altura Máx: {altura} m</p>
+                    </div>
+                )}
+
+            </div>
 
         </div>
     );

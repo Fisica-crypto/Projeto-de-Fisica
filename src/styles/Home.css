@@ -9,17 +9,22 @@
 }
 
 #container-results{
+
   display: flex;
-  grid-template-columns: 1fr 40% 2fr 60%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 #Request{
   flex: 1;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* 👈 isso aqui ajuda MUITO */
   justify-content: space-around;
+  align-items: center;
   width: 100%;
-  height: 200px;
+  height: auto;
 }
 #right{ 
   flex: 1;
@@ -38,14 +43,38 @@
 .results{
   margin: 8%;
 }
+
 .btn-enviar{
   margin-top: 30px;
-  justify-content: right;
-  width: 100px;
-  height: 60px;
+  width: 120px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-enviar:hover{
+  background-color: #3e8e41;
 }
 .insert{
   background-color: #676767;
+}
+#results-box{
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  min-width: 200px;
+}
+
+#results-box h2{
+  margin-bottom: 10px;
+}
+
+#results-box p{
+  margin: 5px 0;
 }
 
 /* Responsividade */
