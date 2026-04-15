@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import p5 from "p5";
 
-export default function ProjectileAnimation({ velocidade, angulo, gravidade, restart, onFinish }) {
+export default function ProjectileAnimation({ velocidade, angulo, gravidade, tempo, restart, onFinish }) {
   const sketchRef = useRef(null);
   const p5Instance = useRef(null);
 
@@ -12,6 +12,7 @@ export default function ProjectileAnimation({ velocidade, angulo, gravidade, res
     const v0 = Number(velocidade);
     const ang = Number(angulo);
     const g = Number(gravidade);
+    const t = Number(tempo);
 
     if (!v0 || !ang || isNaN(v0) || isNaN(ang)) return;
 
@@ -78,7 +79,7 @@ export default function ProjectileAnimation({ velocidade, angulo, gravidade, res
                     onFinish();
                 }
 
-                p.noLoop(); // 🔥 PARA A ANIMAÇÃO
+                p.noLoop();
             }
         };
     };

@@ -11,10 +11,12 @@ export function calcularAlcance(velocidade, angulo){
     return (2 * velocidade * Math.cos(angRad)) * t;
 }
 
-export function calcularAltura(velocidade, angulo, gravidade){
+export function calcularAltura(velocidade, angulo, gravidade, tempo){
         const v0 = parseFloat(velocidade);
         const ang = grausParaRad(angulo);
-        const g = parseFloat(gravidade)
+        const g = parseFloat(gravidade);
+        const t = (calcularTempo(velocidade, angulo))
+        const v0y = velocidade * Math.sin(ang)
         var Erro = ''
         
         
@@ -38,9 +40,8 @@ export function calcularAltura(velocidade, angulo, gravidade){
             alert("Ângulo deve estar entre 0° e 90° (não inclusivo)");
             return;
         }
-
-       return( (v0 ** 2 * Math.sin(ang) ** 2) / (2 * g)
-        )
+        const h = v0y * t + (gravidade / 2) * (t ** 2);
+        return h; //(v0 ** 2 * Math.sin(ang) ** 2) / (2 * g)
        };
 
 export function calcularTempo(velocidade, angulo){

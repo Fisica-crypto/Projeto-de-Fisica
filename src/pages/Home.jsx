@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "../styles/Home.css";
 import { calcularAlcance, calcularAltura, calcularTempo } from "../utils/mov";
 import Animation from "../components/Animation";
-
+// colocar na pagina de como usar sobre a proporção(zoom), informar a a altura de lançamento talvez.
 export default function Home(){
 
     const [velocidade, setVelocidade] = useState("");
     const [angulo, setAngulo] = useState("");
     const [gravidade, setGravidade] = useState(9.8);
 
-    const [tempo, setTempo] = useState(null);
+    const [tempo, setTempo] = useState('');
     const [alcance, setAlcance] = useState(null);
     const [altura, setAltura] = useState(null);
 
@@ -28,6 +28,18 @@ export default function Home(){
         const v = Number(velocidade);
         const a = Number(angulo);
         const g = Number(gravidade);
+        let t;
+        
+        if(tempo === "" || tempo === null) {
+            t = calcularTempo(v, a, g);
+        }else {
+            t = Number(tempo)
+        }
+
+        if(isNaN(t) || t < 0) {
+            setErro('Digita certo ai mano');
+            return;
+        }
 
         if(isNaN(v) || isNaN(a) || isNaN(g)){
             setErro("Digite apenas números válidos");
@@ -44,9 +56,8 @@ export default function Home(){
             return;
         }
 
-        const t = calcularTempo(v, a, g);
-        const al = calcularAlcance(v, a, g);
-        const h = calcularAltura(v, a, g);
+        const al = calcularAlcance(v, a, g, t);
+        const h = calcularAltura(v, a, g, t);
 
         setTempo(t.toFixed(2));
         setAlcance(al.toFixed(2));
@@ -88,6 +99,15 @@ export default function Home(){
                         value={gravidade}
                         onChange={(e)=>setGravidade(e.target.value)}
                         className="insert"
+                    />
+                </div>
+
+                <div className="input">
+                    <p>Tempo</p>
+                    <input 
+                        type="number" 
+                        value={tempo}
+                        onChange={(e)=>setTempo(e.target.value)}    
                     />
                 </div>
 
