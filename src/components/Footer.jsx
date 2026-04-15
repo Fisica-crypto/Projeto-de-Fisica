@@ -39,7 +39,7 @@ export default function Footer(){
                 <h3>Coordenador do Projeto</h3>
                 <ul>
                     <li>Mestre Roberto Kennedy Cardoso</li>
-                    <li>Francisco Cristiano da Silva Macedo</li>
+                    <li>Dr. Francisco Cristiano da Silva Macedo</li>
                 </ul>
                 </div>
                 <div className="refs">

@@ -4,9 +4,10 @@ import Header from "./components/Header";
 import Alcance from "./pages/Alcance";
 import Altura from "./pages/Altura";
 import Tempo from "./pages/tempo";
-import Home from "./pages/Home";
+import Inicio from "./pages/Inicio";
 import Obliquo from "./pages/Exemplos";
 import Sobre from "./pages/Sobre";
+import Simulador from "./pages/Home";
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Inicio />} />
+        <Route path="/Simulador" element={<Simulador />} />
         <Route path="/Altura" element={<Altura />} />
         <Route path="/Alcance" element={<Alcance />} />
         <Route path="/Tempo" element={<Tempo />} />

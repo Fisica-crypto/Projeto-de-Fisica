@@ -3,7 +3,7 @@ import "../styles/Home.css";
 import { calcularAlcance, calcularAltura, calcularTempo } from "../utils/mov";
 import Animation from "../components/Animation";
 
-export default function Home(){
+export default function Simulador(){
 
     const [velocidade, setVelocidade] = useState("");
     const [angulo, setAngulo] = useState("");

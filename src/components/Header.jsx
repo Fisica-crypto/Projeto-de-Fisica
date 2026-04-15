@@ -20,7 +20,8 @@ export default function Header() {
                 {/* DIREITA - Links */}
                 <nav className="navbar-box">
                     <ul className="navbar-links">
-                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/">Inicio</Link></li>
+                        <li><Link to="/Simulador">Simulador</Link></li>
                         <li><Link to="/Altura">Altura</Link></li>
                         <li><Link to="/Alcance">Alcance</Link></li>
                         <li><Link to="/Tempo">Tempo</Link></li>
