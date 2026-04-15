@@ -7,6 +7,7 @@ export default function Altura() {
   const [angulo, setAngulo] = useState("");
   const [gravidade, setGravidade] = useState("");     // começa vazio
   const [altura, setAltura] = useState(null);
+  const [tempo, setTempo] = useState("")
   const [erro, setErro] = useState("");
 
   function LancarObj(){
@@ -46,6 +47,13 @@ export default function Altura() {
         value={gravidade}
         onChange={(e) => setGravidade(e.target.value)}
         step="0.01"
+      />
+
+      <input 
+        type="number" 
+        placeholder="Tempo (m/s)"
+        value={tempo}
+        onChange={(e)=>setTempo(e.target.value)}    
       />
 
       <button onClick={LancarObj}>Calcular</button>

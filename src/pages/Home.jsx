@@ -109,14 +109,14 @@ export default function Simulador(){
                     />
                 </div>
 
-                <div className="input">
+                {/*<div className="input">
                     <p>Tempo</p>
                     <input 
                         type="number" 
                         value={tempo}
                         onChange={(e)=>setTempo(e.target.value)}    
                     />
-                </div>
+                </div>*/}
 
                 <button onClick={calcular} className="btn-enviar">
                     Calcular
@@ -134,6 +134,7 @@ export default function Simulador(){
                         velocidade={Number(velocidade)}
                         angulo={Number(angulo)}
                         gravidade={Number(gravidade)}
+                        tempo={Number(tempo)}
                         restart={restart}
                     />
                 </div>
