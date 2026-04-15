@@ -52,3 +52,10 @@ export function calcularTempo(velocidade, angulo){
 
     return tempo;
 }
+
+export function CalAlcance(velocidade, angulo, tempo){
+    const angRad = grausParaRad(angulo);  //usa o radiano calculado.
+    const t = tempo;
+
+    return (2 * velocidade * Math.cos(angRad)) * t;
+}

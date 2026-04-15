@@ -40,8 +40,10 @@ function Inicio(){
                 No Lancamento Oblíquo, um objeto ao ser lançado, o vetor da velocidade inicial 
                 <InlineMath math={'(V_0)'}/> se divide em dois eixos perpendiculares.</p>
             <ul>
-        <li><strong>Horizontal (\(V_x\)):</strong> Permanece constante durante todo o percurso. <br />
-            <InlineMath math={'( V_x = V_0 cdot cos(theta) )'}/> </li>
+        <li><strong>Horizontal 
+            <InlineMath math={'(V_x)'}/>
+            :</strong> Permanece constante durante todo o percurso. <br />
+            <InlineMath math={' V_x = V_0 \\cdot \\cos(\\theta) '}/> </li>
 
         <li>
         <strong>
@@ -87,8 +89,7 @@ function Inicio(){
             <ul>
                 <li><strong>Aplicações Práticas:</strong> O lançamento oblíquo é fundamental em diversas áreas, como esportes (arremesso de dardos, lançamento de foguetes), engenharia (trajetória de projéteis) e até mesmo na exploração espacial.</li>
                 <li><strong>Influência do Ângulo de Lançamento:</strong> O ângulo ideal para alcançar a máxima distância horizontal é de 
-                
-                <InlineMath math={'(45^circ)'}/> graus, assumindo que não há resistência do ar. No entanto, na prática, fatores como a resistência do ar e a altura do lançamento podem alterar esse valor.</li>
+                 45° graus, assumindo que não há resistência do ar. No entanto, na prática, fatores como a resistência do ar e a altura do lançamento podem alterar esse valor.</li>
                 <li><strong>História:</strong> O estudo do lançamento oblíquo remonta a Galileu Galilei, que foi um dos primeiros a analisar o movimento dos projéteis e estabelecer as bases da cinemática.</li>
             </ul>
             </section>

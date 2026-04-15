@@ -108,7 +108,6 @@ export default function Simulador(){
                 <button onClick={calcular} className="btn-enviar">
                     Calcular
                 </button>
-
             </div>
 
             {erro && <p className="erro">{erro}</p>}

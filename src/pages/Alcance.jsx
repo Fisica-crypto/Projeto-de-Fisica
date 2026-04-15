@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "../styles/alcance.css";
-import { calcularAlcance } from "../utils/mov";
+import { CalAlcance } from "../utils/mov";
 
 export default function Alcance() {
     const [velocidade, setVelocidade] = useState(20);
     const [angulo, setAngulo] = useState('');
     const [g, setG] = useState(9.8);
+    const [tempo, setTempo] = useState('')
 
     const [alcance, setAlcance] = useState(null);
     const [erro, setErro] = useState('');
@@ -34,10 +35,11 @@ export default function Alcance() {
         }
 
        //Recebe os valores e adicionas as casas decimais
-        const resultado = calcularAlcance(
+        const resultado = CalAlcance(
             Number(velocidade),
             Number(angulo),
-            Number(g)
+            Number(tempo),
+            Number(g),
         );
 
         setAlcance(resultado.toFixed(2));
@@ -73,6 +75,16 @@ export default function Alcance() {
                     min={0}
                     onChange={(e) => setG(e.target.value)}
                 />
+                <label >Tempo</label>
+                <div className="input">
+                    <p>Tempo</p>
+                    <input 
+                        type="number" 
+                        value={tempo}
+                        onChange={(e)=>setTempo(e.target.value)}    
+                    />
+                </div>
+
 
                 <button onClick={lancarObj}>Lançar</button>
 
