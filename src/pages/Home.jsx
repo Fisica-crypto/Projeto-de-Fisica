@@ -4,20 +4,22 @@ import { calcularAlcance, calcularAltura, calcularTempo } from "../utils/mov";
 import Animation from "../components/Animation";
 
 export default function Simulador(){
-
+    
     const [velocidade, setVelocidade] = useState("");
     const [angulo, setAngulo] = useState("");
     const [gravidade, setGravidade] = useState(9.8);
-
+    
     const [tempo, setTempo] = useState('');
     const [alcance, setAlcance] = useState(null);
     const [altura, setAltura] = useState(null);
-
+    
     const [restart, setRestart] = useState(false);
     const [erro, setErro] = useState("");
+    
+    const zeroGrav = Number(gravidade) === 0;
 
     function calcular(){
-
+        
         setErro("");
 
         if(velocidade === "" || angulo === ""){
@@ -55,13 +57,7 @@ export default function Simulador(){
             setErro("Velocidade e gravidade devem ser maiores que 0");  
             return;
         }
-        if(g == 0){
-            alcance == '∞'
-            altura == '∞'
-            tempo == '∞'
-                setErro('Atenção, ao inserir a gravidade como zero, o objeto nunca cai já que não tem outra força para desce-lo')
-            return;
-        }
+
 
         const al = calcularAlcance(v, a, g, t);
         const h = calcularAltura(v, a, g, t);
@@ -108,16 +104,7 @@ export default function Simulador(){
                         className="insert"
                     />
                 </div>
-
-                {/*<div className="input">
-                    <p>Tempo</p>
-                    <input 
-                        type="number" 
-                        value={tempo}
-                        onChange={(e)=>setTempo(e.target.value)}    
-                    />
-                </div>*/}
-
+                
                 <button onClick={calcular} className="btn-enviar">
                     Calcular
                 </button>
@@ -140,7 +127,14 @@ export default function Simulador(){
                 </div>
 
                 {/* RESULTADOS FIXOS (SEM MODAL) */}
-                {tempo && (
+                {zeroGrav ? (
+                    <div id="results-box">
+                        <h2>Resultados</h2>
+                        <p>⏱Tempo: Infinito(∞)</p>   
+                        <p>📏Alcance: Infinito(∞)</p>
+                        <p>📈Altura Máx: Infinito(∞)</p>
+                    </div>
+                ) : tempo && (
                     <div id="results-box">
                         <h2>Resultados</h2>
                         <p>⏱ Tempo: {tempo} s</p>
