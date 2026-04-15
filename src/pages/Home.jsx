@@ -51,8 +51,15 @@ export default function Simulador(){
             return;
         }
 
-        if(v <= 0 || g <= 0){
-            setErro("Velocidade e gravidade devem ser maiores que 0");
+        if(v <= 0 ){
+            setErro("Velocidade e gravidade devem ser maiores que 0");  
+            return;
+        }
+        if(g == 0){
+            alcance == '∞'
+            altura == '∞'
+            tempo == '∞'
+                setErro('Atenção, ao inserir a gravidade como zero, o objeto nunca cai já que não tem outra força para desce-lo')
             return;
         }
 

@@ -11,7 +11,7 @@ export function calcularAlcance(velocidade, angulo){
     return (2 * velocidade * Math.cos(angRad)) * t;
 }
 
-export function calcularAltura(velocidade, angulo, gravidade, tempo){
+export function calcularAltura(velocidade, angulo, gravidade){
         const v0 = parseFloat(velocidade);
         const ang = grausParaRad(angulo);
         const g = parseFloat(gravidade);

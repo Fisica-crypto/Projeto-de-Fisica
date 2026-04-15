@@ -55,7 +55,9 @@ export default function Obliquo() {
         <ul>
           <li>Use valores positivos</li>
           <li>Ângulos entre 0° e 90°</li>
-          <li>Gravidade padrão: 9,8 m/s²</li>
+          <li>Gravidade padrão: 9,8 m/s²
+          <li>Ao definir a gravidade como 0, o objeto segue em linha reta já que não há uma força contrária para que o objeto caia.</li>
+          </li>
         </ul>
       </div>
     </div>

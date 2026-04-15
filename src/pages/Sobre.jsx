@@ -11,13 +11,14 @@ export default function Sobre() {
 
             <div className="content">
             <h2>Quem somos nós?</h2>
-            <p>somos alunos do 3° ano do ensino médio do curso de informática</p>
+            <p>Somos alunos do 3° ano do ensino médio do curso de informática, do IFMA - Campus Timon.</p>
 
             <h2>Qual é o objetivo desse projeto?</h2>
             <p>O ProjetilX (nome dado pelos alunos) é um projeto sobre lançamento obliquo para o doutorado do professor Kennedy. Mas o principal objetivo é facilitar a aprendizagem, com testes e animações </p>
 
             <h3>Alunos:</h3>
-            <p><li>Alexandre Antunes dos Santos</li>
+            <ul>
+                <li>Alexandre Antunes dos Santos</li>
                <li>Arthur Lopes Conceição </li>
                <li>Arthur Luigi Costa Barros</li>
                <li>Bruno Soares Santos </li>
@@ -30,12 +31,13 @@ export default function Sobre() {
                <li>Rihanna Byanca Gomes Lima Farias </li>
                <li>Victor Gabriel De Sousa Dos Santos</li>
                <li>João Manoel de Sousa Alves</li>
-               </p>
+            </ul>
 
             <h3>Professores:</h3>
-            <p><li>Roberto Kennedy Cardoso</li>
-            <li>Francisco Cristiano da Silva Macedo</li>
-            </p>
+            <ul>
+                <li>Mestre Roberto Kennedy Cardoso</li>
+                <li>Doutor Francisco Cristiano da Silva Macêdo</li>
+            </ul>
 
             <h3>Lançamento Obliquo:</h3>
             <p>O lançamento Obliquo é todo movimento parabólico com velocidade horizontal constante, ou seja O lançamento oblíquo é um tipo de movimento onde um objeto é lançado formando um ângulo com o chão (tipo chutar uma bola para cima e para frente).

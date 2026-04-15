@@ -117,7 +117,7 @@ nav a:hover {
     box-shadow: var(--shadow);
 }
 
-.btn :hover {
+.btn:hover {
     background-color: #219150;
     transform: translateY(-3px);
 }

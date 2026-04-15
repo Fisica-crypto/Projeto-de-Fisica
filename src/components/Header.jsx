@@ -7,6 +7,7 @@ export default function Header() {
         <header className="header-container">
             <div className="header-content">
 
+
                 {/* CENTRO - Logo + Título */}
                 <div className="header-center">
                     <img 
