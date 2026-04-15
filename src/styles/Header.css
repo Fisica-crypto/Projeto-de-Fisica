@@ -31,7 +31,7 @@
 }
 
 .header-center h1 {
-    color: white;
+    color: black;
     font-size: 2.7rem;
     font-weight: bold;
     margin: 0;
@@ -57,7 +57,7 @@
 
 .navbar-links li a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 1.45rem;
     transition: color 0.3s ease;
@@ -66,6 +66,16 @@
 
 .navbar-links li a:hover {
     color: #e0ffd6;
+}
+
+@media (prefers-color-scheme: dark) {
+.navbar-links li a {
+    color: white;
+}
+
+.header-center h1 {
+    color: white;
+}
 }
 
 /* Responsivo */
