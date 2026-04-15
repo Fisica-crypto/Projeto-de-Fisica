@@ -12,21 +12,21 @@ function Inicio(){
                 <p>Explore o fascinante mundo do lançamento oblíquo, onde a física e a matemática se unem para revelar os segredos do movimento dos projéteis. 
                     Este simulador interativo é projetado para estudantes, educadores e entusiastas da ciência que desejam compreender melhor os princípios por trás do lançamento oblíquo e suas aplicações práticas.</p>
                 <Link to='/Simulador' className='btn'>Acessar Simulador</Link>
-                
+
         </section>
 
         <section id="teoria">{/* Teoria do Lançamento*/}
 
             <h2>Teoria por trás do Lançamento Obliquo</h2>
             <h3>O que é o Lançamento Oblíquo?</h3>
-            <p>É um movimento que acontece em duas direções simultaneamente.O
-                 lançamento oblíquo é um movimento bidimensional (em duas dimensões) 
-                onde um objeto é lançado com velocidade inicial formando um ângulo (\(\theta\)) entre \(0^\circ\)
-                e \(90^\circ\) com a horizontal. 
-                Ele descreve uma trajetória parabólica, combinando Movimento Retilíneo Uniforme (MRU) na horizontal e Movimento Uniformemente Variado (MUV) na vertical, sob ação da gravidade. 
-                 O objeto não vai apenas para cima (como um lançamento vertical) nem apenas para o lado 
-                 (como uma bola rolando no chão);
-                ele descreve uma curva chamada parábola</p>
+            <p>
+            É um movimento que acontece em duas direções simultaneamente. O
+            lançamento oblíquo é um movimento bidimensional (em duas dimensões)
+            onde um objeto é lançado com velocidade inicial formando um ângulo (
+            <InlineMath math={"\\theta"} />) entre{" "}
+            <InlineMath math={"0^\\circ"} /> e{" "}
+            <InlineMath math={"90^\\circ"} /> com a horizontal.
+            </p>
 
             <p>Um projétil, ao ser lançado, retém um movimento horizontal uniforme 
                 e constante, ao mesmo tempo em que adquire um movimento 
@@ -37,10 +37,11 @@ function Inicio(){
             <h3>Componentes da Velocidade:</h3>
             <p>O vetor velocidade é uma grandeza vetorial que representa a taxa de variação da 
                 posição de um objeto, definindo seu módulo (rapidez), direção e sentido em um dado instante.
-                No Lancamento Oblíquo, um objeto ao ser lançado, o vetor da velocidade inicial \(V_0\) se divide em dois eixos perpendiculares.</p>
+                No Lancamento Oblíquo, um objeto ao ser lançado, o vetor da velocidade inicial 
+                <InlineMath math={'(V_0)'}/> se divide em dois eixos perpendiculares.</p>
             <ul>
         <li><strong>Horizontal (\(V_x\)):</strong> Permanece constante durante todo o percurso. <br />
-            \( V_x = V_0 \cdot \cos(\theta) \)</li>
+            <InlineMath math={'( V_x = V_0 cdot cos(theta) )'}/> </li>
 
         <li>
         <strong>
@@ -85,7 +86,9 @@ function Inicio(){
             <h3>Curiosidades sobre o Lançamento Obliquo:</h3>
             <ul>
                 <li><strong>Aplicações Práticas:</strong> O lançamento oblíquo é fundamental em diversas áreas, como esportes (arremesso de dardos, lançamento de foguetes), engenharia (trajetória de projéteis) e até mesmo na exploração espacial.</li>
-                <li><strong>Influência do Ângulo de Lançamento:</strong> O ângulo ideal para alcançar a máxima distância horizontal é de \(45^\circ\) graus, assumindo que não há resistência do ar. No entanto, na prática, fatores como a resistência do ar e a altura do lançamento podem alterar esse valor.</li>
+                <li><strong>Influência do Ângulo de Lançamento:</strong> O ângulo ideal para alcançar a máxima distância horizontal é de 
+                
+                <InlineMath math={'(45^circ)'}/> graus, assumindo que não há resistência do ar. No entanto, na prática, fatores como a resistência do ar e a altura do lançamento podem alterar esse valor.</li>
                 <li><strong>História:</strong> O estudo do lançamento oblíquo remonta a Galileu Galilei, que foi um dos primeiros a analisar o movimento dos projéteis e estabelecer as bases da cinemática.</li>
             </ul>
             </section>

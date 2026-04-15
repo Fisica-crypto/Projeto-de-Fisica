@@ -4,10 +4,11 @@
     justify-content: center;
     align-items: center;
     margin: 10%;
-    color: #fff;
+    color: #ffffff;
     background-color: #0f172a;
 }
 .card{
     background-color: #3c4861;
     padding: 20px ;
+    color: #000;
 }
