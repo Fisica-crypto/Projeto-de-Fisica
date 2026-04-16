@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { calcularAltura } from "../utils/mov";
+import { CalAltura } from "../utils/mov";
 import "../styles/Altura.css";
 
 export default function Altura() {
@@ -14,10 +14,11 @@ export default function Altura() {
     setErro('');
       if (angulo === '') return;
     
-      const resultado = calcularAltura(
+      const resultado = CalAltura(
              Number(velocidade),
              Number(angulo),
              Number(gravidade),
+             Number(tempo),
          );
     
     setAltura(resultado.toFixed(2))

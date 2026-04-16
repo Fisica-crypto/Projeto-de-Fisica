@@ -30,20 +30,14 @@ export default function Simulador(){
         const v = Number(velocidade);
         const a = Number(angulo);
         const g = Number(gravidade);
-        let t;
         
-        if(tempo === "" || tempo === null) {
-            t = calcularTempo(v, a, g);
-        }else {
-            t = Number(tempo)
-        }
-
-        if(isNaN(t) || t < 0) {
+        
+        /*if(isNaN(t) || t < 0) {
             setErro('Digita certo ai mano');
             return;
-        }
-
-        if(isNaN(v) || isNaN(a) || isNaN(g)){
+            }*/
+           
+           if(isNaN(v) || isNaN(a) || isNaN(g)){
             setErro("Digite apenas números válidos");
             return;
         }
@@ -52,13 +46,14 @@ export default function Simulador(){
             setErro("Ângulo deve estar entre 0 e 90");
             return;
         }
-
+        
         if(v <= 0 ){
             setErro("Velocidade e gravidade devem ser maiores que 0");  
             return;
         }
-
-
+        
+        
+        const t = calcularTempo(v, a, g);
         const al = calcularAlcance(v, a, g, t);
         const h = calcularAltura(v, a, g, t);
 
@@ -76,7 +71,7 @@ export default function Simulador(){
             <div id="Request">
 
                 <div className="input">
-                    <p>Velocidade (m/s)</p>
+                    <p>Velocidade Inicial (m/s)</p>
                     <input
                         type="number"
                         value={velocidade}
@@ -96,7 +91,7 @@ export default function Simulador(){
                 </div>
 
                 <div className="input">
-                    <p>Gravidade (m/s²)</p>
+                    <p> Aceleração da Gravidade (m/s²)</p>
                     <input
                         type="number"
                         value={gravidade}
@@ -108,7 +103,6 @@ export default function Simulador(){
                 <button onClick={calcular} className="btn-enviar">
                     Calcular
                 </button>
-
             </div>
 
             {erro && <p className="erro">{erro}</p>}

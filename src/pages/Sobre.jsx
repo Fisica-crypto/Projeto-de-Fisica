@@ -38,12 +38,6 @@ export default function Sobre() {
                 <li>Mestre Roberto Kennedy Cardoso</li>
                 <li>Doutor Francisco Cristiano da Silva Macêdo</li>
             </ul>
-
-            <h3>Lançamento Obliquo:</h3>
-            <p>O lançamento Obliquo é todo movimento parabólico com velocidade horizontal constante, ou seja O lançamento oblíquo é um tipo de movimento onde um objeto é lançado formando um ângulo com o chão (tipo chutar uma bola para cima e para frente).
-            Ele é chamado de movimento parabólico porque a trajetória forma uma parábola (um arco). o movimento acontece em duas direções ao mesmo tempo:
-            Horizontal onde a velocidade é constante. e Vertical Aqui existe a gravidade e a velocidade muda o tempo todo: diminui quando sobe e aumenta quando desce    
-            </p>
             </div>
         </div>
     )
