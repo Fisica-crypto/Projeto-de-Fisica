@@ -12,6 +12,7 @@ export default function ProjectileAnimation({ velocidade, angulo, gravidade, tem
     const v0 = Number(velocidade);
     const ang = Number(angulo);
     const g = Number(gravidade);
+    const t = Number(tempo);
 
     if (!v0 || !ang || isNaN(v0) || isNaN(ang)) return;
 

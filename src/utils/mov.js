@@ -11,11 +11,59 @@ export function calcularAlcance(velocidade, angulo){
     return (2 * velocidade * Math.cos(angRad)) * t;
 }
 
-export function calcularAltura(velocidade, angulo, gravidade){
+export function calcularAltura(velocidade, angulo, gravidade, /*t */ ){
         const v0 = parseFloat(velocidade);
         const ang = grausParaRad(angulo);
         const g = parseFloat(gravidade);
-        const t = (calcularTempo(velocidade, angulo))
+        //const t = (calcularTempo(velocidade, angulo))
+        //const v0y = velocidade * Math.sin(ang)
+        var Erro = ''
+        
+        
+        if (isNaN(v0) || isNaN(ang) || isNaN(g)) {
+            Erro("Por favor, preencha todos os campos com valores válidos!");
+            return;
+        }
+
+        if (ang <= 0 || ang >= 90) {
+            Erro("O ângulo deve estar entre 0° e 90° (não inclusivo)");
+            return;
+        }
+
+        if (isNaN(v0) || isNaN(ang)) {
+            alert("digite valores validos!")
+            return;
+        }
+        
+       
+        if (ang <= 0 || ang >= 90) {
+            alert("Ângulo deve estar entre 0° e 90° (não inclusivo)");
+            return;
+        }
+        /*const h = v0y * t - (gravidade / 2) * (t ** 2);
+        return h;*/ return(v0 ** 2 * Math.sin(ang) ** 2) / (2 * g)
+       };
+
+export function calcularTempo(velocidade, angulo){
+
+    const rad = grausParaRad(angulo)
+
+    const tempo = (2 * velocidade * Math.sin(rad)) / g;
+
+    return tempo;
+}
+
+export function CalAlcance(velocidade, angulo, tempo){
+    const angRad = grausParaRad(angulo);  //usa o radiano calculado.
+    const t = tempo;
+
+    return (velocidade * Math.cos(angRad)) * t;
+}
+export function CalAltura(velocidade, angulo, gravidade, tempo){
+        const v0 = parseFloat(velocidade);
+        const ang = grausParaRad(angulo);
+        const g = parseFloat(gravidade);
+        const t = tempo
         const v0y = velocidade * Math.sin(ang)
         var Erro = ''
         
@@ -40,22 +88,6 @@ export function calcularAltura(velocidade, angulo, gravidade){
             alert("Ângulo deve estar entre 0° e 90° (não inclusivo)");
             return;
         }
-        const h = v0y * t + (gravidade / 2) * (t ** 2);
+        const h = v0y * t - (gravidade / 2) * (t ** 2);
         return h; //(v0 ** 2 * Math.sin(ang) ** 2) / (2 * g)
        };
-
-export function calcularTempo(velocidade, angulo){
-
-    const rad = grausParaRad(angulo)
-
-    const tempo = (2 * velocidade * Math.sin(rad)) / g;
-
-    return tempo;
-}
-
-export function CalAlcance(velocidade, angulo, tempo){
-    const angRad = grausParaRad(angulo);  //usa o radiano calculado.
-    const t = tempo;
-
-    return (velocidade * Math.cos(angRad)) * t;
-}

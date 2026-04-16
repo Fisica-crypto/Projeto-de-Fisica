@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { calcularAltura } from "../utils/mov";
+import { CalAltura } from "../utils/mov";
 import "../styles/Altura.css";
 
 export default function Altura() {
@@ -7,16 +7,18 @@ export default function Altura() {
   const [angulo, setAngulo] = useState("");
   const [gravidade, setGravidade] = useState("");     // começa vazio
   const [altura, setAltura] = useState(null);
+  const [tempo, setTempo] = useState("")
   const [erro, setErro] = useState("");
 
   function LancarObj(){
     setErro('');
       if (angulo === '') return;
     
-      const resultado = calcularAltura(
+      const resultado = CalAltura(
              Number(velocidade),
              Number(angulo),
              Number(gravidade),
+             Number(tempo),
          );
     
     setAltura(resultado.toFixed(2))
@@ -46,6 +48,13 @@ export default function Altura() {
         value={gravidade}
         onChange={(e) => setGravidade(e.target.value)}
         step="0.01"
+      />
+
+      <input 
+        type="number" 
+        placeholder="Tempo (m/s)"
+        value={tempo}
+        onChange={(e)=>setTempo(e.target.value)}    
       />
 
       <button onClick={LancarObj}>Calcular</button>
