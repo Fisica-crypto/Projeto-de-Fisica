@@ -5,7 +5,6 @@ import { CalAlcance } from "../utils/mov";
 export default function Alcance() {
     const [velocidade, setVelocidade] = useState(20);
     const [angulo, setAngulo] = useState('');
-    const [g, setG] = useState(9.8);
     const [tempo, setTempo] = useState('')
 
     const [alcance, setAlcance] = useState(null);
@@ -16,30 +15,23 @@ export default function Alcance() {
         setAlcance(null);
 
         // Parte das validações, para evitar letras ou não números e espaços vazios
-        if (velocidade === '' || angulo === '' || g === '') {
+        if (velocidade === '' || angulo === '') {
             setErro("Preencha todos os campos.");
             return;
         }
 
-        if (isNaN(velocidade) || isNaN(angulo) || isNaN(g)) {
+        if (isNaN(velocidade) || isNaN(angulo)) {
             setErro("Digite apenas números válidos.");
             return;
         }
         if (velocidade <= 0){
             setErro('A velocidade deve ser maior que zero.')
         } 
-
-        if (g <= 0) {
-            setErro("A gravidade deve ser maior que 0.");
-            return;
-        }
-
        //Recebe os valores e adicionas as casas decimais
         const resultado = CalAlcance(
             Number(velocidade),
             Number(angulo),
             Number(tempo),
-            Number(g),
         );
 
         setAlcance(resultado.toFixed(2));
@@ -67,14 +59,6 @@ export default function Alcance() {
                     onChange={(e) => setAngulo(e.target.value)}
                 />
 
-                <label>Gravidade (m/s²)</label>
-                <input
-                    type="number"
-                    placeholder="Ex: 9.8"
-                    value={g}
-                    min={0}
-                    onChange={(e) => setG(e.target.value)}
-                />
                 <label >Tempo</label>
                 <div className="input">
                     <p>Tempo</p>
