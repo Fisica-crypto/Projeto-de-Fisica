@@ -68,18 +68,22 @@ function Inicio(){
 
                 <li>
                     <strong>Posição Vertical (y):</strong>
-                    <BlockMath math={"y(t) = V_0 \\cdot \\sin(\\theta) \\cdot t - \\frac{1}{2} g t^2"} />
+                    <BlockMath math={"y(t) = \\frac{V_0 \\cdot \\sin(\\theta) \\cdot {t} }{g} "} />
                 </li>
 
                 <li>
                     <strong>Alcance Máximo (R):</strong>
-                    <BlockMath math={"R = \\frac{V_0^2 \\cdot \\sin(2\\theta)}{g}"} />
+                    <BlockMath math={"R = 2 \\cdot V_0 \\cdot \\cos(\\theta) \\cdot {t}"} />
                 </li>
 
                 <li>
                     <strong>Altura Máxima (H):</strong>
                     <BlockMath math={"H = \\frac{V_0^2 \\cdot \\sin^2(\\theta)}{2g}"} />
-                </li>
+                </li>   
+                <li>
+                    <strong>Tempo Total (t):</strong>
+                    <BlockMath math={"t = \\frac{2 \\cdot V_0 \\cdot \\sin(\\theta)}{g}"} />
+                </li>   
             </ul>
 
         </section>
