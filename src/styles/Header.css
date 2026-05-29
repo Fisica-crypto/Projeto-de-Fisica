@@ -1,0 +1,93 @@
+.header-container {
+    width: 100vw;
+    padding: 25px 0 20px 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==================== CENTRO ==================== */
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-logo {
+    max-height: 140px;
+    margin-bottom: 10px;
+}
+
+.header-center h1 {
+    color: black;
+    font-size: 2.7rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== DIREITA ==================== */
+.navbar-box {
+    margin-left: auto;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.45rem;
+    white-space: nowrap;
+    display: inline-block; /* importante pro transform funcionar */
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--secondary-color); /* usa teu padrão */
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .navbar-links a {
+        color: white;
+    }
+
+    .header-center h1 {
+        color: white;
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .header-center h1 {
+        font-size: 2.2rem;
+    }
+
+    .navbar-links a {
+        font-size: 1.3rem;
+    }
+}

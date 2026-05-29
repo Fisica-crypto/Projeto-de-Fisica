@@ -1,0 +1,209 @@
+/* --- Variáveis Globais ---
+.logo-image {
+    /* 1. Define um tamanho fixo para a altura (ajuste conforme o gosto)
+    height: 60px; 
+    
+    */
+    /* 2. Garante que a imagem não estique ou achate 
+    width: auto; 
+    
+    */
+    
+    /* 4. Alinhamento fino (opcional) */
+    /* Caso a logo pareça "subida" em relação ao texto 
+    vertical-align: middle; 
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a imagem e o texto */
+
+
+
+:root {
+    --primary-color: #2c3e50;    /* Azul meia-noite (Profissional) */
+    --secondary-color: #27ae60;  /* Verde IFMA (Identidade Visual) */
+    --accent-color: #e67e22;     /* Laranja (Ação/Curiosidade) */
+    --background-light: #f4f7f6; /* Cinza muito claro (Leitura confortável) */
+    --text-color: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Reset e Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
+/* --- Header e Navegação --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 5%;
+    align-items: center;
+    border-bottom: 4px solid var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color :#219150;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- Seção de Apresentação (Hero) --- */
+#apresentacao {
+    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
+                url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 6rem 10%;
+    text-align: center;
+}
+#apresentacao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);      
+    border-left: none;          /* ← remove a barra lateral */
+    padding-left: 0;            /* ← remove o padding da barra */
+}
+
+#apresentacao p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Botão Estilizado */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    background-color: #219150;
+    transform: translateY(-3px);
+}
+
+/* --- Conteúdo Principal (Teoria) --- */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+section {
+    background: var(--white);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 15px;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+/* Lista de Equações e Componentes */
+ul {
+    margin-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: var(--secondary-color);
+}
+
+/* Estilização para fórmulas MathJax */
+.mjx-chtml {
+    font-size: 1.1rem !important;
+    color: var(--primary-color);
+}
+
+/* --- Box de Curiosidades --- */
+#curiosidades {
+    background-color: #e8f5e9; /* Verde bem claro */
+    border: 1px solid var(--secondary-color);
+}
+
+#curiosidades h3 {
+    border-left-color: var(--accent-color);
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    #apresentacao h2 {
+        font-size: 1.8rem;
+    }
+}
